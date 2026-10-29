@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Pact - Pay After Placement Courses</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+brand: {
+50: '#eef2ff',
+100: '#e0e7ff',
+500: '#6366f1',
+600: '#4f46e5',
+700: '#4338ca',
+800: '#3730a3',
+900: '#1e1b4b',
+dark: '#0f172a',
+accent: '#10b981',
+glow: '#06b6d4',
+amber: '#f59e0b'
+}
+},
+fontFamily: {
+sans: ['Inter', 'sans-serif'],
+}
+}
+}
+}
+</script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- FontAwesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+}
+.vibrant-gradient {
+background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #312e81 70%, #4338ca 100%);
+}
+.hero-glow {
+box-shadow: 0 0 50px -12px rgba(99, 102, 241, 0.4);
+}
+.card-glow:hover {
+box-shadow: 0 20px 40px -15px rgba(79, 70, 229, 0.25);
+}
+.pulse-whatsapp {
+animation: pulse-ring 2s infinite;
+}
+@keyframes pulse-ring {
+0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen selection:bg-brand-500 selection:text-white">
+
+<!-- TOP NAVIGATION BAR -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-indigo-100 shadow-sm transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- New Modern SVG Logo -->
+<a href="#" class="flex items-center space-x-3 group">
+<div class="w-12 h-12 bg-gradient-to-tr from-brand-700 via-brand-600 to-brand-accent rounded-2xl flex items-center justify-center p-2 shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform duration-300">
+<!-- Dynamic Geometric Rocket + Handshake Arrow SVG -->
+<svg viewBox="0 0 100 100" class="w-full h-full text-white">
+<defs>
+<linearGradient id="logoGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#10b981" />
+<stop offset="50%" stop-color="#38bdf8" />
+<stop offset="100%" stop-color="#ffffff" />
+</linearGradient>
+</defs>
+<!-- Rocket Wing/Pact Diamond -->
+<path d="M50 10 L82 45 L50 90 L18 45 Z" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"/>
+<!-- Upward Career Rocket Growth Arrow -->
+<path d="M50 25 L68 50 L56 50 L56 72 L44 72 L44 50 L32 50 Z" fill="url(#logoGrad)"/>
+<circle cx="50" cy="36" r="3.5" fill="#1e1b4b"/>
+</svg>
+</div>
+<div>
+<span class="text-2xl font-black tracking-tight text-slate-900 flex items-center">
+Career<span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-accent ml-1">Pact</span>
+</span>
+<span class="block text-[10px] font-bold text-slate-500 tracking-widest uppercase">Pay After Placement</span>
+</div>
+</a>
+
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex items-center space-x-8 font-semibold text-slate-600 text-sm">
+<a href="#home" class="hover:text-brand-600 transition-colors">Home</a>
+<a href="#courses" class="hover:text-brand-600 transition-colors">Courses</a>
+<a href="#how-it-works" class="hover:text-brand-600 transition-colors">How It Works</a>
+<a href="#isa" class="hover:text-brand-600 transition-colors">ISA Info</a>
+<a href="#services" class="hover:text-brand-600 transition-colors">Services</a>
+<a href="#contact" class="hover:text-brand-600 transition-colors">Contact</a>
+</nav>
+
+<!-- Action CTAs -->
+<div class="hidden sm:flex items-center space-x-3">
+<!-- Direct WhatsApp Header Button -->
+<a href="https://wa.me/918893732317?text=Hi%20Career%20Pact%2C%20I%20want%20to%20know%20more%20about%20your%20Pay%20After%20Placement%20courses."
+target="_blank"
+class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-4 py-2.5 rounded-xl shadow-md hover:shadow-emerald-500/30 transition-all flex items-center space-x-2 text-sm">
+<i class="fa-brands fa-whatsapp text-lg"></i>
+<span>Chat on WhatsApp</span>
+</a>
+
+<button onclick="openApplyModal('Header CTA')" class="bg-gradient-to-r from-brand-600 to-brand-800 hover:from-brand-700 hover:to-brand-900 text-white font-bold px-5 py-2.5 rounded-xl shadow-md hover:shadow-indigo-500/30 transition-all text-sm">
+Apply Now <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i>
+</button>
+</div>
+
+<!-- Mobile Hamburger Button -->
+<div class="flex md:hidden items-center space-x-2">
+<a href="https://wa.me/918893732317?text=Hi%20Career%20Pact%2C%20I%20am%20interested%20in%20Pay%20After%20Placement."
+target="_blank" class="text-emerald-500 p-2 text-2xl">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+<button id="mobile-menu-btn" class="text-slate-700 hover:text-slate-900 focus:outline-none p-2">
+<i class="fa-solid fa-bars text-2xl"></i>
+</button>
+</div>
+</div>
+
+<!-- Mobile Menu Dropdown -->
+<div id="mobile-menu" class="hidden md:hidden bg-white border-b border-indigo-100 px-4 pt-2 pb-6 space-y-3 shadow-xl">
+<a href="#home" class="block py-2 text-slate-700 font-semibold hover:text-brand-600">Home</a>
+<a href="#courses" class="block py-2 text-slate-700 font-semibold hover:text-brand-600">Courses</a>
+<a href="#how-it-works" class="block py-2 text-slate-700 font-semibold hover:text-brand-600">How It Works</a>
+<a href="#isa" class="block py-2 text-slate-700 font-semibold hover:text-brand-600">ISA Info</a>
+<a href="#services" class="block py-2 text-slate-700 font-semibold hover:text-brand-600">Services</a>
+<a href="#contact" class="block py-2 text-slate-700 font-semibold hover:text-brand-600">Contact</a>
+
+<a href="https://wa.me/918893732317?text=Hi%20Career%20Pact%2C%20I%20would%20like%20to%20apply."
+target="_blank"
+class="w-full flex items-center justify-center space-x-2 bg-emerald-500 text-white font-bold py-3 rounded-xl shadow">
+<i class="fa-brands fa-whatsapp text-lg"></i>
+<span>WhatsApp Notification</span>
+</a>
+<button onclick="openApplyModal('Mobile Menu')" class="w-full bg-brand-600 text-white font-bold py-3 rounded-xl shadow">
+Apply Online Now
+</button>
+</div>
+</header>
+
+<!-- HERO SECTION -->
+<section id="home" class="relative vibrant-gradient text-white py-20 lg:py-28 overflow-hidden">
+<!-- Glow Overlay Accents -->
+<div class="absolute top-1/4 left-10 w-96 h-96 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-10 right-10 w-96 h-96 bg-brand-accent/20 rounded-full blur-3xl pointer-events-none"></div>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid lg:grid-cols-12 gap-12 items-center">
+
+<!-- Left Content -->
+<div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+<div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 text-brand-accent px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase shadow-inner">
+<i class="fa-solid fa-shield-halved text-brand-amber"></i>
+<span>Guaranteed Career Security</span>
+</div>
+
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+Pay Nothing Until You Land a <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">Min ₹3 LPA Job!</span>
+</h1>
+
+<p class="text-base sm:text-lg text-indigo-100 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+Master Full Stack, Data Science, AI & Analytics with <strong>₹0 Upfront Tuition Fees</strong>. Learn from top industry mentors and pay only when you secure your dream tech position.
+</p>
+
+<!-- Highlights Badge Grid -->
+<div class="grid grid-cols-3 gap-4 pt-4 border-t border-indigo-500/30 max-w-lg mx-auto lg:mx-0">
+<div class="text-center lg:text-left">
+<p class="text-2xl sm:text-3xl font-black text-emerald-400">₹0</p>
+<p class="text-[11px] text-indigo-200 uppercase font-semibold">Upfront Cost</p>
+</div>
+<div class="text-center lg:text-left">
+<p class="text-2xl sm:text-3xl font-black text-white">Min ₹3 LPA</p>
+<p class="text-[11px] text-indigo-200 uppercase font-semibold">Salary Threshold</p>
+</div>
+<div class="text-center lg:text-left">
+<p class="text-2xl sm:text-3xl font-black text-cyan-300">100%</p>
+<p class="text-[11px] text-indigo-200 uppercase font-semibold">Placement Pact</p>
+</div>
+</div>
+
+<!-- Hero Action Buttons -->
+<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+<a href="https://wa.me/918893732317?text=Hi%20Career%20Pact%2C%20I%20am%20ready%20to%20enroll%20in%20the%20Pay%20After%20Placement%20program."
+target="_blank"
+class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold px-8 py-4 rounded-2xl shadow-xl shadow-emerald-500/30 hover:scale-105 transition-all text-center flex items-center justify-center space-x-3">
+<i class="fa-brands fa-whatsapp text-2xl"></i>
+<span>Chat on WhatsApp (+91 8893732317)</span>
+</a>
+<button onclick="openApplyModal('Hero Lead')" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-2xl border border-white/20 backdrop-blur-md transition-all text-center">
+Apply Online <i class="fa-solid fa-angle-right ml-2"></i>
+</button>
+</div>
+</div>
+
+<!-- Right Direct Form Card (Integrated with Formspree for careerpact99@gmail.com) -->
+<div class="lg:col-span-5">
+<div class="bg-white text-slate-900 p-8 rounded-3xl shadow-2xl border border-indigo-100 relative hero-glow">
+<div class="absolute -top-3.5 right-6 bg-gradient-to-r from-brand-600 to-emerald-500 text-white text-[11px] font-black uppercase tracking-wider px-4 py-1.5 rounded-full shadow-lg">
+Instant Notification
+</div>
+<h3 class="text-2xl font-extrabold text-slate-900">Get Instant Callback</h3>
+<p class="text-slate-500 text-xs mb-6">Receive detailed course brochures & eligibility results directly.</p>
+
+<form action="https://formspree.io/f/careerpact99@gmail.com" method="POST" onsubmit="handleFormSubmit(event, 'Hero Form')" class="space-y-4">
+<input type="hidden" name="_subject" value="New Lead Submission - Career Pact Website">
+<input type="hidden" name="_to" value="careerpact99@gmail.com">
+
+<div>
+<label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name</label>
+<input type="text" name="FullName" required placeholder="Your Name" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-600 text-slate-800 text-sm">
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-700 uppercase mb-1">Email Address</label>
+<input type="email" name="Email" required placeholder="careerpact99@gmail.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-600 text-slate-800 text-sm">
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone Number (WhatsApp)</label>
+<input type="tel" name="Phone" required placeholder="8893732317" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-600 text-slate-800 text-sm">
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-700 uppercase mb-1">Preferred Program</label>
+<select name="Course" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-600 text-slate-800 text-sm">
+<option value="">Select Course</option>
+<option value="Full Stack Development">Full Stack Development (MERN/Python)</option>
+<option value="Data Science & ML">Data Science & Machine Learning</option>
+<option value="Artificial Intelligence">Artificial Intelligence Engineering</option>
+<option value="Data Analytics">Data Analytics & BI</option>
+</select>
+</div>
+<button type="submit" class="w-full bg-gradient-to-r from-brand-600 to-brand-800 hover:from-brand-700 hover:to-brand-900 text-white font-extrabold py-3.5 rounded-xl shadow-lg shadow-indigo-500/20 transition duration-200 uppercase tracking-wide text-sm flex items-center justify-center space-x-2">
+<span>Submit & Get Mail Confirmation</span>
+<i class="fa-solid fa-paper-plane text-xs"></i>
+</button>
+</form>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- KEY FEATURES / ADVANTAGES GRID -->
+<section class="py-16 bg-white border-b border-indigo-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-12">
+<h2 class="text-xs font-black text-brand-600 uppercase tracking-widest mb-2">Why Choose Career Pact?</h2>
+<p class="text-3xl font-black text-slate-900 sm:text-4xl">100% Risk-Free Professional Growth</p>
+</div>
+
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-indigo-200 card-glow transition duration-300">
+<div class="w-14 h-14 bg-indigo-100 text-brand-600 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-sm">
+<i class="fa-solid fa-hand-holding-dollar"></i>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-2">Zero Upfront Fees</h3>
+<p class="text-slate-600 text-sm leading-relaxed">Study with 100% peace of mind. Pay tuition fees only after you get hired with a minimum threshold salary of ₹3 LPA.</p>
+</div>
+
+<!-- Feature 2 -->
+<div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-indigo-200 card-glow transition duration-300">
+<div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-sm">
+<i class="fa-solid fa-laptop-code"></i>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-2">Live Real-World Coding</h3>
+<p class="text-slate-600 text-sm leading-relaxed">Work directly on live enterprise-grade projects, backend microservices, and client-ready AI pipelines.</p>
+</div>
+
+<!-- Feature 3 -->
+<div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-indigo-200 card-glow transition duration-300">
+<div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-sm">
+<i class="fa-solid fa-user-tie"></i>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-2">1-on-1 Senior Mentorship</h3>
+<p class="text-slate-600 text-sm leading-relaxed">Get personalized guidance and code reviews from senior developers and tech leads working at top Tier-1 companies.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PAY AFTER PLACEMENT COURSES CARDS -->
+<section id="courses" class="py-20 bg-slate-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-xs font-black text-brand-600 uppercase tracking-widest mb-2">High Demand Career Tracks</h2>
+<h3 class="text-3xl font-black text-slate-900 sm:text-4xl">Pay After Placement Flagship Programs</h3>
+<p class="text-slate-600 mt-3 text-base">Select a track designed to get you placed immediately.</p>
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+<!-- Course 1 -->
+<div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:border-brand-500 card-glow transition duration-300">
+<div class="bg-gradient-to-r from-slate-900 via-brand-900 to-indigo-950 p-6 text-white relative">
+<span class="bg-brand-500 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md">Most Popular</span>
+<h4 class="text-xl font-extrabold mt-3">Full Stack Web Dev</h4>
+<p class="text-indigo-200 text-xs mt-1">MERN / Python Full Stack</p>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<ul class="space-y-3 text-sm text-slate-600">
+<li class="flex items-center"><i class="fa-solid fa-clock text-brand-600 w-6"></i> <span><strong>Duration:</strong> 6 Months</span></li>
+<li class="flex items-center"><i class="fa-solid fa-video text-brand-600 w-6"></i> <span><strong>Mode:</strong> Live Interactive</span></li>
+<li class="flex items-center"><i class="fa-solid fa-graduation-cap text-brand-600 w-6"></i> <span><strong>Eligibility:</strong> BE/BTech, BCA, BSc</span></li>
+<li class="flex items-center text-slate-900 font-bold"><i class="fa-solid fa-sack-dollar text-emerald-600 w-6"></i> <span><strong>Guaranteed:</strong> Min ₹3 LPA</span></li>
+</ul>
+<div class="pt-4 border-t border-slate-100 flex flex-col gap-2">
+<button onclick="openApplyModal('Full Stack Web Development')" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl transition text-sm">
+Enroll Now
+</button>
+<a href="https://wa.me/918893732317?text=Hi%20Career%20Pact%2C%20I%20want%20details%20about%20the%20Full%20Stack%20Web%20Dev%20course."
+target="_blank" class="w-full text-center text-emerald-600 hover:text-emerald-700 font-bold text-xs flex items-center justify-center space-x-1 py-1">
+<i class="fa-brands fa-whatsapp"></i>
+<span>Inquire via WhatsApp</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Course 2 -->
+<div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:border-brand-500 card-glow transition duration-300">
+<div class="bg-gradient-to-r from-slate-900 via-brand-900 to-indigo-950 p-6 text-white relative">
+<span class="bg-emerald-500 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md">High Salary</span>
+<h4 class="text-xl font-extrabold mt-3">Data Science & ML</h4>
+<p class="text-indigo-200 text-xs mt-1">Python, ML, SQL, Deep Learning</p>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<ul class="space-y-3 text-sm text-slate-600">
+<li class="flex items-center"><i class="fa-solid fa-clock text-brand-600 w-6"></i> <span><strong>Duration:</strong> 6 Months</span></li>
+<li class="flex items-center"><i class="fa-solid fa-video text-brand-600 w-6"></i> <span><strong>Mode:</strong> Live Online</span></li>
+<li class="flex items-center"><i class="fa-solid fa-graduation-cap text-brand-600 w-6"></i> <span><strong>Eligibility:</strong> Any Graduate</span></li>
+<li class="flex items-center text-slate-900 font-bold"><i class="fa-solid fa-sack-dollar text-emerald-600 w-6"></i> <span><strong>Guaranteed:</strong> Min ₹3 LPA</span></li>
+</ul>
+<div class="pt-4 border-t border-slate-100 flex flex-col gap-2">
+<button onclick="openApplyModal('Data Science & ML')" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl transition text-sm">
+Enroll Now
+</button>
+<a href="https://wa.me/918893732317?text=Hi%20Career%20Pact%2C%20I%20want%20details%20about%20the%20Data%20Science%20course."
+target="_blank" class="w-full text-center text-emerald-600 hover:text-emerald-700 font-bold text-xs flex items-center justify-center space-x-1 py-1">
+<i class="fa-brands fa-whatsapp"></i>
+<span>Inquire via WhatsApp</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Course 3 -->
+<div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:border-brand-500 card-glow transition duration-300">
+<div class="bg-gradient-to-r from-slate-900 via-brand-900 to-indigo-950 p-6 text-white relative">
+<span class="bg-purple-500 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md">Trending Tech</span>
+<h4 class="text-xl font-extrabold mt-3">Artificial Intelligence</h4>
+<p class="text-indigo-200 text-xs mt-1">Generative AI, LLMs, NLP</p>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<ul class="space-y-3 text-sm text-slate-600">
+<li class="flex items-center"><i class="fa-solid fa-clock text-brand-600 w-6"></i> <span><strong>Duration:</strong> 6 Months</span></li>
+<li class="flex items-center"><i class="fa-solid fa-video text-brand-600 w-6"></i> <span><strong>Mode:</strong> Live Interactive</span></li>
+<li class="flex items-center"><i class="fa-solid fa-graduation-cap text-brand-600 w-6"></i> <span><strong>Eligibility:</strong> Tech Grads</span></li>
+<li class="flex items-center text-slate-900 font-bold"><i class="fa-solid fa-sack-dollar text-emerald-600 w-6"></i> <span><strong>Guaranteed:</strong> Min ₹3.5 LPA</span></li>
+</ul>
+<div class="pt-4 border-t border-slate-100 flex flex-col gap-2">
+<button onclick="openApplyModal('Artificial Intelligence')" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl transition text-sm">
+Enroll Now
+</button>
+<a href="https://wa.me/918893732317?text=Hi%20Career%20Pact%2C%20I%20want%20details%20about%20the%20Artificial%20Intelligence%20course."
+target="_blank" class="w-full text-center text-emerald-600 hover:text-emerald-700 font-bold text-xs flex items-center justify-center space-x-1 py-1">
+<i class="fa-brands fa-whatsapp"></i>
+<span>Inquire via WhatsApp</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Course 4 -->
+<div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:border-brand-500 card-glow transition duration-300">
+<div class="bg-gradient-to-r from-slate-900 via-brand-900 to-indigo-950 p-6 text-white relative">
+<span class="bg-cyan-500 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md">Fast Track</span>
+<h4 class="text-xl font-extrabold mt-3">Data Analytics & BI</h4>
+<p class="text-indigo-200 text-xs mt-1">PowerBI, SQL, Excel, Python</p>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+<ul class="space-y-3 text-sm text-slate-600">
+<li class="flex items-center"><i class="fa-solid fa-clock text-brand-600 w-6"></i> <span><strong>Duration:</strong> 5 Months</span></li>
+<li class="flex items-center"><i class="fa-solid fa-video text-brand-600 w-6"></i> <span><strong>Mode:</strong> Live Online</span></li>
+<li class="flex items-center"><i class="fa-solid fa-graduation-cap text-brand-600 w-6"></i> <span><strong>Eligibility:</strong> Open to All</span></li>
+<li class="flex items-center text-slate-900 font-bold"><i class="fa-solid fa-sack-dollar text-emerald-600 w-6"></i> <span><strong>Guaranteed:</strong> Min ₹3 LPA</span></li>
+</ul>
+<div class="pt-4 border-t border-slate-100 flex flex-col gap-2">
+<button onclick="openApplyModal('Data Analytics & BI')" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl transition text-sm">
+Enroll Now
+</button>
+<a href="https://wa.me/918893732317?text=Hi%20Career%20Pact%2C%20I%20want%20details%20about%20the%20Data%20Analytics%20course."
+target="_blank" class="w-full text-center text-emerald-600 hover:text-emerald-700 font-bold text-xs flex items-center justify-center space-x-1 py-1">
+<i class="fa-brands fa-whatsapp"></i>
+<span>Inquire via WhatsApp</span>
+</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FLOATING WHATSAPP BUTTON WITH NOTIFICATION BADGE -->
+<div class="fixed bottom-6 right-6 z-50 flex items-center space-x-2">
+<a href="https://wa.me/918893732317?text=Hi%20Career%20Pact%2C%20I%20am%20interested%20in%20your%20Pay%20After%20Placement%20program.%20Please%20share%20details!"
+target="_blank"
+class="bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold p-4 rounded-full shadow-2xl pulse-whatsapp transition-all duration-300 transform hover:scale-110 flex items-center justify-center relative group">
+<i class="fa-brands fa-whatsapp text-3xl"></i>
+<!-- Notification Badge Dot -->
+<span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 border-2 border-white rounded-full"></span>
+
+<!-- Hover Tooltip -->
+<span class="absolute right-16 bg-slate-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md">
+Chat on WhatsApp (+91 8893732317)
+</span>
+</a>
+</div>
+
+<!-- CONTACT & FOOTER -->
+<footer id="contact" class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-900">
+
+<!-- Brand Info -->
+<div class="md:col-span-1 space-y-4">
+<a href="#" class="flex items-center space-x-3">
+<div class="w-10 h-10 bg-gradient-to-tr from-brand-700 to-brand-accent rounded-xl flex items-center justify-center p-2">
+<svg viewBox="0 0 100 100" class="w-full h-full text-white">
+<path d="M50 10 L82 45 L50 90 L18 45 Z" fill="none" stroke="currentColor" stroke-width="7"/>
+<path d="M50 25 L68 50 L56 50 L56 72 L44 72 L44 50 L32 50 Z" fill="#38bdf8"/>
+</svg>
+</div>
+<span class="text-2xl font-black text-white tracking-tight">Career<span class="text-brand-500">Pact</span></span>
+</a>
+<p class="text-xs text-slate-400 leading-relaxed">
+Career Pact offers risk-free Pay After Placement tech education with guaranteed minimum ₹3 LPA career options.
+</p>
+</div>
+
+<!-- Quick Links -->
+<div>
+<h4 class="text-white font-extrabold text-xs uppercase mb-4 tracking-widest">Quick Navigation</h4>
+<ul class="space-y-2 text-xs">
+<li><a href="#home" class="hover:text-white transition">Home</a></li>
+<li><a href="#courses" class="hover:text-white transition">Courses</a></li>
+<li><a href="#how-it-works" class="hover:text-white transition">How It Works</a></li>
+<li><a href="#isa" class="hover:text-white transition">ISA Terms</a></li>
+</ul>
+</div>
+
+<!-- Featured Programs -->
+<div>
+<h4 class="text-white font-extrabold text-xs uppercase mb-4 tracking-widest">Programs</h4>
+<ul class="space-y-2 text-xs">
+<li><a href="#courses" class="hover:text-white transition">Full Stack Development</a></li>
+<li><a href="#courses" class="hover:text-white transition">Data Science & ML</a></li>
+<li><a href="#courses" class="hover:text-white transition">Artificial Intelligence</a></li>
+<li><a href="#courses" class="hover:text-white transition">Data Analytics</a></li>
+</ul>
+</div>
+
+<!-- Direct Contact Details -->
+<div>
+<h4 class="text-white font-extrabold text-xs uppercase mb-4 tracking-widest">Direct Contact</h4>
+<ul class="space-y-3 text-xs">
+<li class="flex items-center space-x-3">
+<i class="fa-solid fa-envelope text-brand-500"></i>
+<a href="mailto:careerpact99@gmail.com" class="hover:text-white transition">careerpact99@gmail.com</a>
+</li>
+<li class="flex items-center space-x-3">
+<i class="fa-solid fa-phone text-brand-500"></i>
+<a href="tel:8893732317" class="hover:text-white transition">+91 8893732317</a>
+</li>
+<li class="flex items-center space-x-3">
+<i class="fa-brands fa-whatsapp text-emerald-500"></i>
+<a href="https://wa.me/918893732317?text=Hi%20Career%20Pact%2C%20I%20have%20a%20query." target="_blank" class="hover:text-emerald-400 font-bold transition">WhatsApp: +91 8893732317</a>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+<p>&copy; <span id="year"></span> Career Pact. All rights reserved.</p>
+<p>Official Contact: <a href="mailto:careerpact99@gmail.com" class="text-brand-500 underline">careerpact99@gmail.com</a> | Mob: <strong>8893732317</strong></p>
+</div>
+</div>
+</footer>
+
+<!-- MODAL POPUP (Formspree Integrated) -->
+<div id="apply-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+<div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative">
+<button onclick="closeApplyModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-2">
+<i class="fa-solid fa-xmark text-xl"></i>
+</button>
+
+<div class="mb-6">
+<h3 class="text-2xl font-black text-slate-900">Apply for Career Pact</h3>
+<p class="text-slate-500 text-xs mt-1">Track: <span id="selected-course-label" class="font-bold text-brand-600">General Application</span></p>
+</div>
+
+<form action="https://formspree.io/f/careerpact99@gmail.com" method="POST" onsubmit="handleFormSubmit(event, 'Modal Form')" class="space-y-4">
+<input type="hidden" name="_subject" value="New Lead Submission from Modal - Career Pact">
+<input type="hidden" name="_to" value="careerpact99@gmail.com">
+
+<div>
+<label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name</label>
+<input type="text" name="FullName" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-600 text-slate-800 text-sm">
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-700 uppercase mb-1">Email Address</label>
+<input type="email" name="Email" required placeholder="careerpact99@gmail.com" class="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-600 text-slate-800 text-sm">
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-700 uppercase mb-1">Mobile / WhatsApp Number</label>
+<input type="tel" name="Phone" required placeholder="8893732317" class="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-600 text-slate-800 text-sm">
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-700 uppercase mb-1">Qualification</label>
+<select name="Qualification" required class="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-600 text-slate-800 text-sm">
+<option value="">Select Qualification</option>
+<option>B.E / B.Tech</option>
+<option>BCA / MCA</option>
+<option>B.Sc / M.Sc</option>
+<option>Other Graduation</option>
+</select>
+</div>
+
+<button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 rounded-xl shadow-md transition duration-200 uppercase tracking-wide text-sm mt-2">
+Submit & Send Notification Email
+</button>
+</form>
+</div>
+</div>
+
+<!-- SUCCESS TOAST -->
+<div id="toast" class="fixed bottom-24 right-6 z-50 hidden bg-slate-900 text-white px-6 py-4 rounded-2xl shadow-2xl border border-emerald-500 flex items-center space-x-3">
+<div class="w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center">
+<i class="fa-solid fa-check"></i>
+</div>
+<div>
+<h5 class="font-bold text-sm">Application Sent!</h5>
+<p class="text-xs text-slate-300">Confirmation emailed to careerpact99@gmail.com.</p>
+</div>
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuBtn.addEventListener('click', () => {
+mobileMenu.classList.toggle('hidden');
+});
+
+const applyModal = document.getElementById('apply-modal');
+const selectedCourseLabel = document.getElementById('selected-course-label');
+
+function openApplyModal(courseName) {
+selectedCourseLabel.textContent = courseName || 'General Application';
+applyModal.classList.remove('hidden');
+}
+
+function closeApplyModal() {
+applyModal.classList.add('hidden');
+}
+
+applyModal.addEventListener('click', (e) => {
+if (e.target === applyModal) closeApplyModal();
+});
+
+function handleFormSubmit(event, source) {
+// Note: Formspree will handle actual mail dispatch to careerpact99@gmail.com
+const toast = document.getElementById('toast');
+toast.classList.remove('hidden');
+setTimeout(() => { toast.classList.add('hidden'); }, 4000);
+}
+</script>
+</body>
+</html>
